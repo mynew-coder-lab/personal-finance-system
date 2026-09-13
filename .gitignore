@@ -24,8 +24,19 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Alembic
+# Alembic (contains DB URL and auto-generated migration files)
+alembic.ini
+alembic/versions/
 alembic/versions/__pycache__/
+
+# Docker (contains credentials)
+docker-compose.yml
+docker-compose*.yml
+*.yml
+!requirements*.yml
+
+# Docs (generated/maintained locally)
+docs/
 
 # Distribution
 dist/

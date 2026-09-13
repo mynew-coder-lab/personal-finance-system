@@ -18,6 +18,7 @@ from sqlalchemy import text
 
 from app.backend.config import settings
 from app.backend.database.database import engine
+from app.backend.routes.auth import router as auth_router
 from app.backend.utils.logging import logger
 
 
@@ -57,6 +58,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# ── API Routers ──────────────────────────────────────────────────
+
+app.include_router(auth_router, prefix=settings.API_V1_STR)
 
 
 # ── Global Exception Handler ────────────────────────────────────
